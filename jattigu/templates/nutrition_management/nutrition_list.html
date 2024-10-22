@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrition List{% endblock %}
+
+{% block content %}
+<h1>Nutrition List</h1>
+<ul>
+    {% for item in nutritional_items %}
+        <li>
+            <a href="{% url 'nutrition_detail' item.pk %}">{{ item.name }}</a> - {{ item.calories }} kcal
+        </li>
+    {% empty %}
+        <p>No nutritional items available.</p>
+    {% endfor %}
+</ul>
+{% endblock %}

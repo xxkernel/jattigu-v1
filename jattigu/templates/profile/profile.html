@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Профиль пользователя</h2>
+  <p><strong>Полное имя:</strong> {{ user.full_name }}</p>
+  <p><strong>Дата рождения:</strong> {{ user.date_of_birth }}</p>
+  <p><strong>Пол:</strong> {{ user.gender }}</p>
+  <p><strong>Цель фитнеса:</strong> {{ user.fitness_goal }}</p>
+  <p><strong>Вес:</strong> {{ user.weight }} кг</p>
+  <p><strong>Рост:</strong> {{ user.height }} см</p>
+  <p><strong>BMI:</strong> {{ bmi }}</p>
+  <p><strong>Дата регистрации:</strong> {{ user.registration_date }}</p>
+  <p><strong>Премиум статус:</strong> {{ user.is_premium|yesno:"Да,Нет" }}</p>
+
+  {% if subscription %}
+    <h3>Подписка</h3>
+    <p>Тип подписки: {{ subscription.type }}</p>
+    <p>Активна до: {{ subscription.active_until }}</p>
+    <p>Осталось дней: {{ days_left }}</p>
+    <form method="post" action="{% url 'extend_subscription' %}">
+      {% csrf_token %}
+      <button type="submit">Продлить подписку на 30 дней</button>
+    </form>
+  {% else %}
+    <p>Подписка не активна.</p>
+  {% endif %}
+{% endblock %}

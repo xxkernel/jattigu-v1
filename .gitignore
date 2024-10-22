@@ -1,0 +1,41 @@
+# Virtual Environment
+myvenv/
+
+#Игнорировать файлы конфигураций среды
+.env
+.env.local
+
+
+# Python Bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Log files
+*.log
+
+# Coverage reports
+coverage/
+*.cover
+
+# Build directories
+build/
+dist/
+*.egg-info/
+
+# IDE/Editor specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Operating system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.bak
+*.tmp
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints

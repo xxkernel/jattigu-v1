@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Exercise Detail{% endblock %}
+
+{% block content %}
+    <h1>{{ exercise.name }}</h1>
+    <p>Description: {{ exercise.description }}</p>
+    <p>Category: {{ exercise.category }}</p> <!-- Adjust field names as necessary -->
+    <p>Level: {{ exercise.level }}</p> <!-- Adjust field names as necessary -->
+    
+    <a href="{% url 'exercise_list' %}">Back to Exercise List</a>
+{% endblock %}

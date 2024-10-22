@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrition Details{% endblock %}
+
+{% block content %}
+<h1>{{ nutrition_item.name }}</h1>
+<p><strong>Calories:</strong> {{ nutrition_item.calories }} kcal</p>
+<p><strong>Protein:</strong> {{ nutrition_item.protein }} g</p>
+<p><strong>Fats:</strong> {{ nutrition_item.fats }} g</p>
+<p><strong>Carbohydrates:</strong> {{ nutrition_item.carbohydrates }} g</p>
+<a href="{% url 'nutrition_list' %}">Back to Nutrition List</a>
+{% endblock %}

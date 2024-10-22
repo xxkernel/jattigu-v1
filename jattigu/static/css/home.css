@@ -1,0 +1,24 @@
+/* static/css/styles.css */
+
+/* Style for the welcome message on the home page */
+h1 {
+    color: #4CAF50;      /* Green color for the header */
+    font-size: 2.5em;     /* Slightly larger font */
+    text-align: center;   /* Center the header text */
+    margin-top: 20px;
+}
+
+/* Style for the paragraph text */
+p {
+    color: #333;           /* Dark grey color for the text */
+    font-size: 1.2em;      /* Increase font size for readability */
+    text-align: center;    /* Center the paragraph text */
+    margin: 20px auto;
+    width: 80%;            /* Center with a set width */
+}
+
+/* Optional body background for home page */
+body {
+    background-color: #f9f9f9;  /* Light grey background */
+    font-family: Arial, sans-serif; /* Set font for the page */
+}

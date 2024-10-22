@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Category Details{% endblock %}
+
+{% block content %}
+<h1>{{ category.name }}</h1>
+<p>{{ category.description }}</p>
+<a href="{% url 'nutrition_category_list' %}">Back to Categories</a>
+{% endblock %}

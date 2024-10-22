@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Exercise List{% endblock %}
+
+{% block content %}
+    <h1>Exercise List</h1>
+    
+    {% if exercises %}
+        <ul>
+            {% for exercise in exercises %}
+                <li>
+                    <a href="{% url 'exercise_detail' exercise.pk %}">{{ exercise.name }}</a> <!-- Use the correct field for the name -->
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No exercises available.</p>
+    {% endif %}
+{% endblock %}

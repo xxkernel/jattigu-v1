@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrition Categories{% endblock %}
+
+{% block content %}
+<h1>Nutrition Categories</h1>
+<ul>
+    {% for category in categories %}
+        <li>
+            <a href="{% url 'nutrition_category_detail' category.pk %}">{{ category.name }}</a>
+        </li>
+    {% empty %}
+        <p>No categories available.</p>
+    {% endfor %}
+</ul>
+{% endblock %}

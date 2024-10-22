@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Информация о подписке</h2>
+  {% if subscription %}
+    <p><strong>Тип подписки:</strong> {{ subscription.type }}</p>
+    <p><strong>Стоимость:</strong> {{ subscription.price }} руб.</p>
+    <p><strong>Дата активации:</strong> {{ subscription.start_date }}</p>
+    <p><strong>Активна до:</strong> {{ subscription.active_until }}</p>
+    <p><strong>Автопродление:</strong> {{ subscription.auto_renew|yesno:"Включено,Выключено" }}</p>
+    <p><strong>Осталось дней:</strong> {{ subscription.days_left }}</p>
+  {% else %}
+    <p>У вас нет активной подписки.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ category.name }}</h1>
+    <p>{{ category.description }}</p> <!-- Assuming there's a 'description' field for the category -->
+
+    <h3>Posts in this Category:</h3>
+    {% if posts %}
+        <ul>
+            {% for post in posts %}
+                <li>
+                    <a href="{% url 'blog_post_detail' post.pk %}">{{ post.title }}</a> <!-- Link to post detail -->
+                    <p>{{ post.created_at|date:"F j, Y" }}</p> <!-- Display the post creation date -->
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No posts available in this category.</p>
+    {% endif %}
+
+    <a href="{% url 'blog_category_list' %}">Back to Categories</a>
+{% endblock %}
